@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.08.00">
+    <object class="AudioFile" id="{27d5f314-fab9-4aa0-83ff-94054157c7c7}">
+        <property name="assetPath">
+            <value>BB_BStat_Soft_170-E.wav</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>1</value>
+        </property>
+        <property name="length">
+            <value>2.8235374149659864</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{54293480-53ef-45f3-8405-ad84c748670a}</destination>
+        </relationship>
+    </object>
+</objects>

@@ -1,0 +1,174 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d34fc3cd3716a147a27c240139fe8a4, type: 3}
+  m_Name: InformationDatabase
+  m_EditorClassIdentifier: 
+  info:
+  - statement: "Plus de 250 000 tonnes d'ordures sont collect\xE9es chaque ann\xE9e
+      \xE0 Montpellier"
+    question: "Combien de tonnes d'ordures sont collect\xE9es chaque ann\xE9e \xE0
+      Montpellier ?"
+    answer1: 150 000
+    answer2: 250 000
+    answer3: 350 000
+    correctAnswer: 1
+    seen: 1
+    asked: 1
+  - statement: "Les sacs plastiques ne sont pas recyclables, mais ils peuvent \xEAtre
+      incin\xE9r\xE9s"
+    question: "Parmi ces d\xE9chets, lequel n'est pas recyclable ?"
+    answer1: Un pot en verre
+    answer2: Une bouteille de shampoing
+    answer3: Un sac plastique
+    correctAnswer: 2
+    seen: 0
+    asked: 0
+  - statement: "Le verre peut se recycler \xE0 l'infini"
+    question: "Quel mat\xE9riau peut se recycler \xE0 l\u2019infini ?"
+    answer1: Le plastique
+    answer2: Le verre
+    answer3: Le carton
+    correctAnswer: 1
+    seen: 0
+    asked: 0
+  - statement: "R\xE9gle des 3R : R\xE9duire, R\xE9utiliser, Recycler"
+    question: "Quelle est la r\xE8gle des \xAB 3R \xBB ?"
+    answer1: "R\xE9tr\xE9cir, R\xE9utiliser, Redonner"
+    answer2: Ramasser, Rapporter, Recomposer
+    answer3: "R\xE9duire, R\xE9utiliser, Recycler"
+    correctAnswer: 2
+    seen: 0
+    asked: 0
+  - statement: "Un fran\xE7ais produit en moyenne 400 kg de d\xE9chets par an"
+    question: "Combien de kilos de d\xE9chets un fran\xE7ais produit-il en moyenne
+      par an ?"
+    answer1: 200 kg
+    answer2: 300 kg
+    answer3: 400 kg
+    correctAnswer: 2
+    seen: 0
+    asked: 0
+  - statement: "Le recyclage est le fait de transformer les d\xE9chets en nouveaux
+      produits"
+    question: Qu''est-ce que le recyclage ?
+    answer1: "Le fait de trier ses d\xE9chets"
+    answer2: "La transformation des d\xE9chets en nouveaux produits"
+    answer3: "Le fait de bruler les d\xE9chets"
+    correctAnswer: 1
+    seen: 0
+    asked: 0
+  - statement: "Un sac plastique met environ 500 ans \xE0 se d\xE9composer"
+    question: "Combien de temps met un sac plastique pour se d\xE9composer ?"
+    answer1: 50 ans
+    answer2: 500 ans
+    answer3: 5000 ans
+    correctAnswer: 1
+    seen: 0
+    asked: 0
+  - statement: "Le verre met plus de 4 000 ans \xE0 se d\xE9composer"
+    question: "Combien de temps le verre met-il \xE0 se d\xE9composer ?"
+    answer1: 1 000 ans
+    answer2: 2 000 ans
+    answer3: 4 000 ans
+    correctAnswer: 2
+    seen: 0
+    asked: 0
+  - statement: "Les m\xE9dicaments p\xE9rim\xE9s doivent \xEAtre ramen\xE9s dans une
+      pharmacie"
+    question: "O\xF9 jeter des m\xE9dicaments p\xE9rim\xE9s ?"
+    answer1: Il faut les ramener en pharmacie
+    answer2: Avec le compost
+    answer3: Dans la poubelle grise
+    correctAnswer: 0
+    seen: 0
+    asked: 0
+  - statement: "Les stylos peuvent \xEAtre jet\xE9s dans la poubelle grise"
+    question: Dans quelle poubelle se jette un stylo ?
+    answer1: "Dans une poubelle sp\xE9ciale"
+    answer2: Dans la poubelle jaune
+    answer3: Dans la poubelle grise
+    correctAnswer: 2
+    seen: 1
+    asked: 0
+  - statement: "Les piles doivent \xEAtre d\xE9pos\xE9es dans une poubelle sp\xE9cialis\xE9e"
+    question: "Les piles doivent \xEAtre d\xE9pos\xE9es dans ..."
+    answer1: La poubelle jaune
+    answer2: La poubelle grise
+    answer3: "Une poubelle sp\xE9cialis\xE9e"
+    correctAnswer: 2
+    seen: 0
+    asked: 0
+  - statement: "Tout le monde peut d\xE9poser des d\xE9chets \xE0 la d\xE9chetterie"
+    question: "Qui peut mettre des objets \xE0 la d\xE9chetterie ?"
+    answer1: Tout le monde
+    answer2: Uniquement les professionnels
+    answer3: Uniquement les particuliers
+    correctAnswer: 0
+    seen: 0
+    asked: 0
+  - statement: "4 bouteilles d'eau recycl\xE9es peuvent cr\xE9er 3 nouvelles bouteilles"
+    question: "Combien faut-il recycler de bouteilles d'eau pour cr\xE9er 3 nouvelles
+      bouteilles ?"
+    answer1: 3
+    answer2: 4
+    answer3: 10
+    correctAnswer: 2
+    seen: 0
+    asked: 0
+  - statement: "Un carton peut \xEAtre recycl\xE9 10 fois avant d'\xEAtre incin\xE9r\xE9"
+    question: "Combien de fois un carton peut-il \xEAtre recycl\xE9 ?"
+    answer1: 5 fois
+    answer2: 10 fois
+    answer3: 100 fois
+    correctAnswer: 1
+    seen: 0
+    asked: 0
+  - statement: "En France, seulement 10% des verres sont recycl\xE9s"
+    question: "En France, la proportion de verres recycl\xE9s est de ..."
+    answer1: 10%
+    answer2: 30%
+    answer3: 50%
+    correctAnswer: 0
+    seen: 0
+    asked: 0
+  - statement: "En France, seulement 20% des plastiques sont recycl\xE9s"
+    question: "En France, la proportion des plastiques recycl\xE9s est de ..."
+    answer1: 20%
+    answer2: 50%
+    answer3: 80%
+    correctAnswer: 0
+    seen: 0
+    asked: 0
+  - statement: En France, on recycle le verre depuis 1975
+    question: Depuis quand recycle-t'on le verre en France ?
+    answer1: 1955
+    answer2: 1975
+    answer3: 1995
+    correctAnswer: 1
+    seen: 0
+    asked: 0
+  - statement: "Le verre collect\xE9 est recycl\xE9 \xE0 100%"
+    question: "Quel proportion du verre collect\xE9 est ensuite recycl\xE9 ?"
+    answer1: 50%
+    answer2: 75%
+    answer3: 100%
+    correctAnswer: 2
+    seen: 1
+    asked: 0
+  - statement: "Lorsqu'un d\xE9chet finit dans l'oc\xE9an, il coule et ne pourra jamais
+      se d\xE9grader"
+    question: "Qu'arrivent-il aux d\xE9chets jet\xE9s dans l'oc\xE9an ?"
+    answer1: "Ils s'\xE9chouent sur les plages"
+    answer2: "Ils se d\xE9gradent tout seuls"
+    answer3: Ils coulent
+    correctAnswer: 2
+    seen: 0
+    asked: 0
