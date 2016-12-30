@@ -12,10 +12,15 @@ public class PauseUI : MonoBehaviour {
     public Sprite fullVolume;
     public GameObject volumeHandle;
     Image volumeHandleImage;
+    float volume;
 
     void Awake() {
         firstButton = GetComponentInChildren<Button>();
         volumeHandleImage = volumeHandle.GetComponent<Image>();
+        //volume 
+        volume = PlayerPrefs.GetFloat("Volume");
+        GameObject.FindGameObjectWithTag("SliderVolume").GetComponent<Slider>().value = volume;//Changer le slider
+        SetVolume(volume);
     }
 
     public void Select() {
@@ -50,10 +55,16 @@ public class PauseUI : MonoBehaviour {
 
     public void ChangeVolume(GameObject myObject) {
         Slider mySlider = myObject.GetComponent<Slider>();
-        GameObject.FindGameObjectWithTag("Global").GetComponent<AudioSource>().volume = 0.1f * mySlider.value / 3.0f;
-		GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<FMODUnity.StudioEventEmitter> ().SetParameter ("volumeMusique", mySlider.value / 6f);
-        GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterBehavior>().SetVolume(mySlider.value / 3.0f);
+        SetVolume(mySlider.value);
         UpdateVolumeSprite(mySlider);
+    }
+
+    public void SetVolume(float vol)
+    {
+        PlayerPrefs.SetFloat("Volume", vol);
+        GameObject.FindGameObjectWithTag("Global").GetComponent<AudioSource>().volume = 0.1f * vol / 3.0f;
+        GameObject.FindGameObjectWithTag("MainCamera").GetComponent<FMODUnity.StudioEventEmitter>().SetParameter("volumeMusique", vol / 6f);
+        GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterBehavior>().SetVolume(vol / 3.0f);
     }
 
     void UpdateVolumeSprite(Slider mySlider) {

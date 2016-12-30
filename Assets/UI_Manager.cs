@@ -10,13 +10,22 @@ public class UI_Manager : MonoBehaviour {
     public GameObject panelOptions;
     public GameObject cloud1,cloud2;
     public GameObject Canvas;
+    public Sprite noVolume;
+    public Sprite midVolume;
+    public Sprite fullVolume;
     Button firstButton;
+    Image volumeHandleImage;
+    public GameObject volumeHandle;
+    float volume;
 
     // Use this for initialization
-    void Start () {
+    void Awake () {
         firstButton = Canvas.GetComponentInChildren<Button>();
         StartCoroutine(SelectFirstButton());
-
+        //Réglage du volume
+        volumeHandleImage = volumeHandle.GetComponent<Image>();
+        volume = PlayerPrefs.GetFloat("Volume");
+        SetVolume(volume);
     }
 
     IEnumerator SelectFirstButton() {
@@ -50,6 +59,10 @@ public class UI_Manager : MonoBehaviour {
     public void ShowOptions()
     {
         panelOptions.SetActive(!panelOptions.activeInHierarchy);
+        //Volume Slider 
+        if (panelOptions.activeInHierarchy) {
+        GameObject.FindGameObjectWithTag("SliderVolume").GetComponent<Slider>().value = volume;
+        }
     }
 
     public void QuitGame()
@@ -59,6 +72,28 @@ public class UI_Manager : MonoBehaviour {
     }
 
     //---Options---
+    public void ChangeVolume(GameObject myObject)
+    {
+        Slider mySlider = myObject.GetComponent<Slider>();
+        SetVolume(mySlider.value);
+        UpdateVolumeSprite(mySlider);
+    }
 
- 
+    public void SetVolume(float vol)
+    {
+        PlayerPrefs.SetFloat("Volume", vol);
+        GameObject.FindGameObjectWithTag("AudioSource").GetComponent<AudioSource>().volume = 0.1f * vol / 3.0f;
+        volume = PlayerPrefs.GetFloat("Volume");
+    }
+
+    void UpdateVolumeSprite(Slider mySlider)
+    {
+        if (mySlider.value == 0)
+            volumeHandleImage.sprite = noVolume;
+        else if (mySlider.value < 4)
+            volumeHandleImage.sprite = midVolume;
+        else
+            volumeHandleImage.sprite = fullVolume;
+    }
+
 }
