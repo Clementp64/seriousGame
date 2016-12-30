@@ -162,6 +162,12 @@ public class EnemyBehavior : MonoBehaviour {
 		audio.Play();
     }
 
+	public void PlaySoundWrong(){
+		audio.volume = player.GetComponent<AudioSource> ().volume;
+		audio.clip = player.GetComponent<CharacterBehavior> ().soundWrong ();
+		audio.Play();
+	}
+
     void CheckHealth() {
         if(currentHealth <= 0 && !IsStunned()) {
             StunEnnemy();

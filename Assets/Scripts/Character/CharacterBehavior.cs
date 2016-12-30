@@ -39,6 +39,7 @@ public class CharacterBehavior : MonoBehaviour {
 	Object[] shootSounds;
     Object hurtSound;
 	Object heartSound;
+	Object wrongSound;
 
     void Start() {
         currentHp = maxHp;
@@ -55,6 +56,7 @@ public class CharacterBehavior : MonoBehaviour {
         hurtSound = Resources.Load("Sounds/Hurt");
 		shootSounds = Resources.LoadAll ("Sounds/Shoot");
 		heartSound = Resources.Load ("Sounds/heart");
+		wrongSound = Resources.Load ("Sounds/wrong");
         setFrozen(false, true);
     }
     
@@ -475,5 +477,9 @@ public class CharacterBehavior : MonoBehaviour {
 
 	public AudioClip soundShoot () {
 		return (AudioClip)shootSounds [Random.Range (0, shootSounds.Length)];
+	}
+
+	public AudioClip soundWrong () {
+		return (AudioClip)wrongSound;
 	}
 }

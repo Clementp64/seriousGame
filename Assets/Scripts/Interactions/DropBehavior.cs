@@ -23,7 +23,10 @@ public class DropBehavior : MonoBehaviour {
                     }
                 }else {
                     EnemyBehavior behavior = carriedObject.GetComponent<EnemyBehavior>();
-                    if (behavior != null) behavior.MakeStronger();
+					if (behavior != null) {
+						behavior.MakeStronger ();
+						behavior.PlaySoundWrong ();
+					}
                     //collider.GetComponent<CharacterBehavior>().LosePoints();
                     if(WrongEffect != null) {
                         GameObject myEffect = (GameObject)Instantiate(WrongEffect);
