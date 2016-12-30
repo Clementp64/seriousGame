@@ -7,7 +7,7 @@ public class EnemyBehavior : MonoBehaviour {
 
     public float maxHealth;
 	public float currentHealth;
-    public float moveSpeed = 2;
+    public float moveSpeed = 1.8f;
 	public bool isAngry;
     public float pushStrength;
     public float pushTime;

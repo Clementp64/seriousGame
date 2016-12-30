@@ -33,7 +33,7 @@ public class TipsDialogue : MonoBehaviour {
         tipsList.RemoveAt(0);
         tipsText.enabled = true;
         anim.SetTrigger("MoveUp");
-        StartCoroutine(HideAfterDelay(6));
+        StartCoroutine(HideAfterDelay(5));
     }
 
     public static void Hide() {
