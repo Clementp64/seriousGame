@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.08.00">
+    <object class="AudioFile" id="{c0e0380a-2e69-4d7b-96e0-10227e32dde4}">
+        <property name="assetPath">
+            <value>160504__patobottos__heartbeats_modified.wav</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>48</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>65.547520833333337</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{54293480-53ef-45f3-8405-ad84c748670a}</destination>
+        </relationship>
+    </object>
+</objects>
