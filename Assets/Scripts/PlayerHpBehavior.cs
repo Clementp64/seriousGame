@@ -11,6 +11,8 @@ public class PlayerHpBehavior : MonoBehaviour {
     public Sprite EmptyHeartSprite;
     private List<GameObject> myHearts = new List<GameObject>();
     private float myMaxHp;
+    private float deltaAlpha = 0.15f;
+    Image FirstHeart;
 
     public void FirstDisplay(float maxHp, float currentHp) {
         myMaxHp = maxHp;
@@ -30,6 +32,10 @@ public class PlayerHpBehavior : MonoBehaviour {
 
     public void UpdateDisplay(float maxHp, float currentHp) {
         if (currentHp < 0) return;
+        if (currentHp <= 1) {
+            FirstHeart = GetComponentInChildren<Image>();
+            InvokeRepeating("BlinkHearts", 0f, 0.05f);
+        } else CancelInvoke();
         if (maxHp > myMaxHp) {
             for (int i = (int)myMaxHp; i < maxHp; i++) {
                 GameObject Heart1 = Instantiate(Heart);
@@ -45,19 +51,24 @@ public class PlayerHpBehavior : MonoBehaviour {
             return;
         }
 
-        for(int i=0; i<Mathf.Ceil(currentHp); i++) {
+        for (int i = 0; i < Mathf.Ceil(currentHp); i++)
             myHearts[i].GetComponent<Image>().sprite = FullHeartSprite;
-        }
 
-        for(int i = 0; i < maxHp - Mathf.Floor(currentHp); i++) {
-            myHearts[(int)maxHp -1 - i].GetComponent<Image>().sprite = EmptyHeartSprite;
-        }
+        for (int i = 0; i < maxHp - Mathf.Floor(currentHp); i++)
+            myHearts[(int)maxHp - 1 - i].GetComponent<Image>().sprite = EmptyHeartSprite;
 
-        if(!Mathf.Approximately(currentHp, Mathf.RoundToInt(currentHp))) {
+        if (!Mathf.Approximately(currentHp, Mathf.RoundToInt(currentHp)))
             myHearts[(int)Mathf.Ceil(currentHp) - 1].GetComponent<Image>().sprite = HalfHeartSprite;
 
-        }
     }
 
+
+    void BlinkHearts() {
+        Color c = FirstHeart.color;
+        c.a += deltaAlpha;
+        FirstHeart.color = c;
+        if (c.a < 0 || c.a > 1)
+            deltaAlpha *= -1;
+    }
 
 }
