@@ -1,0 +1,7 @@
+Library/
+obj/
+Temp/
+*.log
+*.sln
+*.userprefs
+Assets/FMODStudioCache.asset
