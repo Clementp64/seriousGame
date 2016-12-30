@@ -20,7 +20,6 @@ public class PauseUI : MonoBehaviour {
         //volume 
         volume = PlayerPrefs.GetFloat("Volume");
         GameObject.FindGameObjectWithTag("SliderVolume").GetComponent<Slider>().value = volume;//Changer le slider
-        SetVolume(volume);
     }
 
     public void Select() {
