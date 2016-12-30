@@ -299,7 +299,10 @@ public class CharacterBehavior : MonoBehaviour {
 	
 		if (currentHp <= 0) {
 			Debug.Log ("dead");
-			GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<FMODUnity.StudioEventEmitter> ().Stop ();
+			GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<FMODUnity.StudioEventEmitter> ().SetParameter ("lost", 1f);
+			GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<FMODUnity.StudioEventEmitter> ().SetParameter ("warning", 0f);
+
+
 			gameObject.SetActive(false);
 			EndGame ();
 		}
