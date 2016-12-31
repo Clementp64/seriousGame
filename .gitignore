@@ -5,4 +5,4 @@ Temp/
 *.sln
 *.userprefs
 Assets/FMODStudioCache.asset
-Assets/FMODStudioCache.asset.meta
+*.meta
