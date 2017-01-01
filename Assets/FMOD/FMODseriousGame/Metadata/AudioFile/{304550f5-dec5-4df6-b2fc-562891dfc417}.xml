@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.01.08.00">
-    <object class="AudioFile" id="{2cad8be2-09f5-47dc-bf99-a1da1522218d}">
+    <object class="AudioFile" id="{304550f5-dec5-4df6-b2fc-562891dfc417}">
         <property name="assetPath">
             <value>rapide.wav</value>
         </property>
