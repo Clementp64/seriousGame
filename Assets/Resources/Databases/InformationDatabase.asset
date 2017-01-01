@@ -20,8 +20,8 @@ MonoBehaviour:
     answer2: 250 000
     answer3: 350 000
     correctAnswer: 1
-    seen: 1
-    asked: 1
+    seen: 0
+    asked: 0
   - statement: "Les sacs plastiques ne sont pas recyclables, mais ils peuvent \xEAtre
       incin\xE9r\xE9s"
     question: "Parmi ces d\xE9chets, lequel n'est pas recyclable ?"
@@ -96,7 +96,7 @@ MonoBehaviour:
     answer2: Dans la poubelle jaune
     answer3: Dans la poubelle grise
     correctAnswer: 2
-    seen: 1
+    seen: 0
     asked: 0
   - statement: "Les piles doivent \xEAtre d\xE9pos\xE9es dans une poubelle sp\xE9cialis\xE9e"
     question: "Les piles doivent \xEAtre d\xE9pos\xE9es dans ..."
@@ -120,7 +120,7 @@ MonoBehaviour:
     answer1: 3
     answer2: 4
     answer3: 10
-    correctAnswer: 2
+    correctAnswer: 1
     seen: 0
     asked: 0
   - statement: "Un carton peut \xEAtre recycl\xE9 10 fois avant d'\xEAtre incin\xE9r\xE9"
@@ -161,7 +161,7 @@ MonoBehaviour:
     answer2: 75%
     answer3: 100%
     correctAnswer: 2
-    seen: 1
+    seen: 0
     asked: 0
   - statement: "Lorsqu'un d\xE9chet finit dans l'oc\xE9an, il coule et ne pourra jamais
       se d\xE9grader"
