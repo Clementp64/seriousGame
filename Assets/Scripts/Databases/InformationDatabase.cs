@@ -25,18 +25,7 @@ public class InformationDatabase : ScriptableObject {
         return info[i].statement;
     }
     public string[] GetRandomQuestion() {
-        int i = 0;
-        bool found = false;
-        while (i < info.Count && !found) {
-            if (info[i].seen && !info[i].asked)
-                found = true;
-            else
-                i++;
-        }
-        if (!found) {
-            Debug.Log("NOT ENOUGH SIGNS FOR QUESTION");
-            i = 0;
-        }
+        int i = Random.Range(0, info.Count);
         info[i].asked = true;
         string[] result = new string[5];
         result[0] = info[i].question;
