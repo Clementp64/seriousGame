@@ -92,7 +92,7 @@ public class QuestionBox : MonoBehaviour {
         isChecked = true;
         isFrozen = true;
         if(selectedAnswer == correctAnswer)
-            GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterBehavior>().GainPoints(5);
+            GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterBehavior>().GainPoints(10);
         else {
             answerText[selectedAnswer].color = Color.red;
             audio.Play();
