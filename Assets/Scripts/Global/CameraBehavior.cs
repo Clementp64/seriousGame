@@ -22,10 +22,10 @@ public class CameraBehavior : MonoBehaviour {
     float vertExtent, horzExtent;
 
     void Awake() {
-        minX = -200;
-        maxX = 200;
-        minY = -200;
-        maxY = 200;
+        minX = -2000;
+        maxX = 2000;
+        minY = -2000;
+        maxY = 2000;
 
         vertExtent = Camera.main.orthographicSize;
         horzExtent = vertExtent * Screen.width / Screen.height;
