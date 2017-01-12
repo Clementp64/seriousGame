@@ -5,12 +5,12 @@ using UnityEngine.EventSystems;
 
 public class Upgrades : MonoBehaviour {
 
-    static Upgrades Instance;
+    public static Upgrades Instance;
     public GameObject buttons;
     Image myImage;
     CharacterInventoryModel inventory;
-    int[] prices;
-    int[] levels;
+    public int[] prices;
+    public int[] levels;
     UpgradeButtonBehavior selectedButton;
     public Sprite[] levelsSprites;
     CharacterBehavior playerBehavior;
@@ -21,8 +21,9 @@ public class Upgrades : MonoBehaviour {
         myImage = GetComponent<Image>();
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterInventoryModel>();
         playerBehavior = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterBehavior>();
-        prices = new int[] { 5, 5, 5};
-        levels = new int[] { 0, 0, 0 };
+		GlobalBehavior global = GameObject.FindGameObjectWithTag ("Global").GetComponent<GlobalBehavior> ();
+		prices = new int[] {global.priceUpgradeHp, global.priceUpgradeSpeed, global.priceUpgradeDamage };
+		levels = new int[] { global.nbUpgradeHp, global.nbUpgradeSpeed, global.nbUpgradeDamage };
         Instance = this;
         audio = gameObject.AddComponent<AudioSource>();
         audio.playOnAwake = false;

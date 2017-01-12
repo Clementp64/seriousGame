@@ -12,8 +12,12 @@ public class GameOverUI : MonoBehaviour {
     void Start() {
         firstButton = GetComponentInChildren<Button>();
         firstButton.Select();
+
         if(GameObject.FindGameObjectWithTag("Player") != null) {
-            float temp = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterBehavior>().GetScore() * 100;
+			transform.FindChild ("NextButton").gameObject.SetActive (true);
+
+			CharacterBehavior player = GameObject.FindGameObjectWithTag ("Player").GetComponent<CharacterBehavior> ();
+			float temp = player.GetScore() * 100;
             if (temp > 95)
                 score = "S";
             else if (temp > 85)
@@ -25,7 +29,22 @@ public class GameOverUI : MonoBehaviour {
             else
                 score = "D";
             transform.Find("scoreText").GetComponent<Text>().text = "Score : " + score;
+
+			GlobalBehavior global = GameObject.FindGameObjectWithTag ("Global").GetComponent<GlobalBehavior> ();
+			global.maxHpPlayer = player.getMaxHp ();
+			global.damagePlayer = player.getDamage ();
+			global.moveSpeedPlayer = player.getMoveSpeed ();
+			global.scorePlayer = player.getRecyclePoint ();
+
+			global.nbUpgradeHp = Upgrades.Instance.levels [0];
+			global.nbUpgradeSpeed = Upgrades.Instance.levels [1];
+			global.nbUpgradeDamage = Upgrades.Instance.levels [2];
+			global.priceUpgradeHp = Upgrades.Instance.prices [0];
+			global.priceUpgradeSpeed = Upgrades.Instance.prices [1];
+			global.priceUpgradeDamage = Upgrades.Instance.prices [2];
+
         } else {
+			transform.FindChild ("NextButton").gameObject.SetActive (false);
             transform.Find("scoreText").GetComponent<Text>().text = "Les déchets ont gagné";
         }
     }
@@ -49,6 +68,13 @@ public class GameOverUI : MonoBehaviour {
 		GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<FMODUnity.StudioEventEmitter> ().Stop ();
 		Debug.Log ("Application Retry !");
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+	}
+
+	public void Next2 ()
+	{
+		GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<FMODUnity.StudioEventEmitter> ().Stop ();
+		Debug.Log ("Level 2 !");
+		SceneManager.LoadScene("Level2");
 	}
 
 }

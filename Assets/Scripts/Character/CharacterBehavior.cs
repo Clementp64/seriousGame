@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class CharacterBehavior : MonoBehaviour {
 
@@ -22,7 +23,7 @@ public class CharacterBehavior : MonoBehaviour {
     private Vector3 pushDirection;
     private InteractablePickup carriedObject = null;
     private string layerOfCarriedObject;
-    private float maxHp = 3;
+	private float maxHp = 3;
     private float currentHp;
     private bool isImmune = false;
     public float damage = 3;
@@ -42,8 +43,6 @@ public class CharacterBehavior : MonoBehaviour {
 	Object wrongSound;
 
     void Start() {
-        currentHp = maxHp;
-        UpdateDisplayHearts();
         anim = GetComponent<Animator>();
         myBody = GetComponent<Rigidbody2D>();
         InteractionModel = GetComponent<CharacterInteractionModel>();
@@ -58,6 +57,22 @@ public class CharacterBehavior : MonoBehaviour {
 		heartSound = Resources.Load ("Sounds/heart");
 		wrongSound = Resources.Load ("Sounds/wrong");
         setFrozen(false, true);
+
+		GlobalBehavior global = GameObject.FindGameObjectWithTag ("Global").GetComponent<GlobalBehavior> ();
+
+		if (SceneManager.GetActiveScene ().name == "Level1")
+			global.initValue ();
+		
+		maxHp = global.maxHpPlayer;
+		damage = global.damagePlayer;
+		moveSpeed = global.moveSpeedPlayer;
+		InitPoint (global.scorePlayer);
+		Debug.Log (maxHp);
+		Debug.Log (damage);
+		Debug.Log (moveSpeed);
+
+		currentHp = maxHp;
+		UpdateDisplayHearts();
     }
     
     void Update() {
@@ -107,7 +122,6 @@ public class CharacterBehavior : MonoBehaviour {
     }
 
     void UpdateMovement() {
-
         isMoving = false;
         movementX = 0;
         movementY = 0;
@@ -426,6 +440,13 @@ public class CharacterBehavior : MonoBehaviour {
         audio.Play();
     }
 
+	public void InitPoint(int nb){
+		CharacterInventoryModel inventory = GetComponent<CharacterInventoryModel>();
+		if (inventory == null) return;
+		inventory.AddItem(ItemType.RecyclingPoints, nb);
+		TipsHandler.RecyclingPoints();
+	}
+
 	public void LosePoints(int nb) {
 
     }
@@ -484,5 +505,21 @@ public class CharacterBehavior : MonoBehaviour {
 
 	public AudioClip soundWrong () {
 		return (AudioClip)wrongSound;
+	}
+
+	public float getMaxHp() {
+		return maxHp;
+	}
+
+	public float getDamage() {
+		return damage;
+	}
+
+	public float getMoveSpeed() {
+		return moveSpeed;
+	}
+
+	public int getRecyclePoint(){
+		return GetComponent<CharacterInventoryModel> ().GetItemCount (ItemType.RecyclingPoints);
 	}
 }

@@ -63,7 +63,7 @@ public class PlayerHpBehavior : MonoBehaviour {
     }
 
 
-    void BlinkHearts() {
+    public void BlinkHearts() {
         Color c = FirstHeart.color;
         c.a += deltaAlpha;
         FirstHeart.color = c;
