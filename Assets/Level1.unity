@@ -29654,6 +29654,10 @@ Prefab:
       propertyPath: nbEnnemiesMax
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1000014164318156, guid: b71008f38f50cb140bc4215caabbaffe, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b71008f38f50cb140bc4215caabbaffe, type: 2}
   m_IsPrefabParent: 0
@@ -31442,6 +31446,10 @@ Prefab:
         type: 2}
       propertyPath: nbEnnemiesMax
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000014164318156, guid: b71008f38f50cb140bc4215caabbaffe, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b71008f38f50cb140bc4215caabbaffe, type: 2}
@@ -50551,6 +50559,10 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010220714280, guid: a6922b56f23975142b6e060e219a56d8, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a6922b56f23975142b6e060e219a56d8, type: 2}
   m_IsPrefabParent: 0
@@ -54002,6 +54014,10 @@ Prefab:
         type: 2}
       propertyPath: nbEnnemiesMax
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000014164318156, guid: b71008f38f50cb140bc4215caabbaffe, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b71008f38f50cb140bc4215caabbaffe, type: 2}
